@@ -3,7 +3,7 @@
 
 namespace Maxcal\WordpressDecorators\Tests;
 
-use Maxcal\WordpressDecorators\PostDecorator;
+use Maxcal\WordpressDecorators\Decorator\PostDecorator;
 use Symfony\Component\DomCrawler\Crawler;
 
 class PostTest extends \WP_UnitTestCase {
