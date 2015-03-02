@@ -1,9 +1,13 @@
 <?php
 
-
 namespace Maxcal\WordpressDecorators;
 
+interface DecoratorInterface {
 
-class DecoratorInterface {
+    public function __construct($decorated_object);
 
-} 
+    /**
+     * @return mixed
+     */
+    public function getDecoratedObject();
+}
