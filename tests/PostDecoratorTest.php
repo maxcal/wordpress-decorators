@@ -49,6 +49,7 @@ class PostTest extends \WP_UnitTestCase {
     }
 
     public function test_GetClass(){
+        $this->assertTrue(is_string($this->decorator->getClass("foo")));
         $this->assertContains("foo", $this->decorator->getClass("foo"));
         $this->assertContains("post", $this->decorator->getClass("foo"));
     }

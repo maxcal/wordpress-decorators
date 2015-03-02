@@ -55,7 +55,7 @@ class PostDecorator extends Decorator implements DecoratorInterface {
      * @return array
      */
     public function getClass($extras = ''){
-        return get_post_class($extras, $this->getId());
+        return implode(' ', get_post_class($extras, $this->getId()));
     }
     /**
      * Gets a shortened version of post
