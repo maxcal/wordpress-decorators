@@ -1,6 +1,6 @@
 <?php
 
-namespace Maxcal\WordpressDecorators;
+namespace Maxcal\WordpressDecorators\Decorator;
 
 abstract class Decorator {
 

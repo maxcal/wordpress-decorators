@@ -3,8 +3,6 @@
 
 namespace Maxcal\WordpressDecorators\Decorator;
 
-use Maxcal\WordpressDecorators\DecoratorInterface;
-use Maxcal\WordpressDecorators\Decorator;
 use Maxcal\TagHelper\TagHelper;
 
 class CategoryDecorator extends Decorator implements DecoratorInterface {

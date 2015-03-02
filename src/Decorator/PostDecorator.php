@@ -2,8 +2,6 @@
 
 namespace Maxcal\WordpressDecorators\Decorator;
 
-use Maxcal\WordpressDecorators\Decorator;
-use Maxcal\WordpressDecorators\DecoratorInterface;
 use Maxcal\TagHelper\TagHelper;
 
 class PostDecorator extends Decorator implements DecoratorInterface {
