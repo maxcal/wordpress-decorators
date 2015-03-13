@@ -5,21 +5,18 @@ namespace Maxcal\WordpressDecorators\Decorator;
 abstract class Decorator {
 
     protected $object;
-
     /**
      * @param mixed $decorated_object
      */
     public function __construct($decorated_object){
         $this->object = $decorated_object;
     }
-
     /**
      * @return mixed
      */
     public function getDecoratedObject(){
         return $this->object;
     }
-
     /**
      * Magic getter that looks for the presence of a getter method and in in-leu of that tries to get a
      * public property from the decorated object.
@@ -40,6 +37,8 @@ abstract class Decorator {
             if ($rc->getProperty($property)->isPublic()) return $this->object->$property;
 
         }
+        // We try to look up "prefixed" properties since Wordpress likes to call properties after the table name
+        // ex. category_name
         elseif (property_exists($this->getDecoratedObject(), $prefixed)) {
             $rc = new \ReflectionClass($this->getDecoratedObject());
             if ($rc->getProperty($prefixed)->isPublic()) return $this->object->$prefixed;
@@ -48,7 +47,6 @@ abstract class Decorator {
             throw new \InvalidArgumentException("Trying to get nonexistant or private property $property");
         }
     }
-
     /**
      * The table name of the decorated object
      * @return string

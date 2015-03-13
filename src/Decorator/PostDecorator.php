@@ -5,11 +5,10 @@ namespace Maxcal\WordpressDecorators\Decorator;
 use Maxcal\TagHelper\TagHelper;
 
 class PostDecorator extends Decorator implements DecoratorInterface {
-
     /**
+     * Assigned by Decorator on initialization.
      * @var \WP_Post $object
      */
-
     /**
      * @return int
      */
@@ -45,7 +44,6 @@ class PostDecorator extends Decorator implements DecoratorInterface {
      */
     public function getLink($attr = null){
         $tag = new TagHelper();
-
         return $tag->link($this->getTitle(), $this->getUrl(), $attr);
     }
     /**

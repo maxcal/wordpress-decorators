@@ -32,4 +32,19 @@ class PostCollectionTest extends \WP_UnitTestCase {
         $this->assertEquals(3, $collection->count());
     }
 
+    public function test_first(){
+        $this->assertEquals(
+            $this->collection[0],
+            $this->collection->first(),
+            'Collection->first should get the first member'
+        );
+    }
+
+    public function test_last(){
+        $this->assertEquals(
+            $this->collection[ count($this->collection) - 1 ],
+            $this->collection->last(),
+            'Collection->last should get the last member'
+        );
+    }
 }
